@@ -50,7 +50,7 @@ const Navbar = () => {
                 toast("Logout Successfully");
             })
             .catch(error => {
-                console.error(error.message)
+                console.error(error.message);
             })
     }
 
