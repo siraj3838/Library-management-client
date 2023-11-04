@@ -4,7 +4,7 @@ import app from "../Firebase/firebase.config";
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth(app);
 
-export const AuthContext = createContext(null)
+export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
