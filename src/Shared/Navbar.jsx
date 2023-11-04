@@ -15,15 +15,15 @@ const Navbar = () => {
         <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl " : "text-black"
+                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl " : "text-gray-100"
             }
         >
-            <h4 className="font-bold hover:scale-110 transition-all text-lg">Home</h4>
+            <h4 className="font-bold hover:scale-110 transition-all text-lg ">Home</h4>
         </NavLink>
         <NavLink
             to="/addBooks"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline text-amber-900  shadow-white shadow-2xl" : "text-black"
+                isPending ? "pending" : isActive ? "underline text-amber-900  shadow-white shadow-2xl" : "text-gray-100"
             }
         >
             <h4 className="font-bold hover:scale-110 transition-all text-lg"> Add Book</h4>
@@ -31,7 +31,7 @@ const Navbar = () => {
         <NavLink
             to="/allBooks"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl" : "text-black"
+                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl" : "text-gray-100"
             }
         >
             <h4 className="font-bold hover:scale-110 transition-all text-lg">All Books</h4>
@@ -39,7 +39,7 @@ const Navbar = () => {
         <NavLink
             to="/borrowBooks"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl" : "text-black"
+                isPending ? "pending" : isActive ? "underline text-amber-900 shadow-white shadow-2xl" : "text-gray-100"
             }
         >
             <h4 className="font-bold hover:scale-110 transition-all text-lg">Borrowed Books</h4>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
     const [showNav, setShowNav] = useState(false)
     return (
-        <div className="bg-gradient-to-r from-gray-500 from-10% via-gray-400 via-30% to-gray-300 to-90% py-3 lg:py-0 px-5 lg:px-0">
+        <div className="bg-gradient-to-r from-pink-400 to-red-300 py-3 lg:py-0 px-5 lg:px-0">
             <div className="flex flex-col-reverse justify-center lg:flex-row lg:navbar max-w-screen-xl mx-auto">
                 <div className="flex items-end lg:navbar-start">
                     <div className="lg:hidden">

@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet";
 import HomeBanner from "../Shared/HomeBanner";
 import SecondHomeBanner from "../Shared/SecondHomeBanner";
+import MyMarquee from "../Shared/MyMarquee";
+import UserFeedBack from "../Shared/UserFeedBack";
 
 const HomePage = () => {
     return (
@@ -10,6 +12,8 @@ const HomePage = () => {
             </Helmet>
             <HomeBanner></HomeBanner>
             <SecondHomeBanner></SecondHomeBanner>
+            <UserFeedBack></UserFeedBack>
+            <MyMarquee></MyMarquee>
         </div>
     );
 };

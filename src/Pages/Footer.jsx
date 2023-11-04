@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-gray-500 from-10% via-gray-400 via-30% to-gray-300 to-90%">
+        <footer className="bg-gradient-to-r from-pink-400 to-red-300">
             <footer className="footer max-w-screen-xl mx-auto footer-center p-10  text-base-content rounded">
-                <nav className="grid grid-flow-col gap-4 text-gray-700">
+                <nav className="grid grid-flow-col gap-4 text-gray-700 font-semibold text-base">
                     <Link to={'/'}>Home</Link>
                     <Link to={'/addBooks'}>Add Books</Link>
                     <Link to={'/allBooks'}>All Books</Link>
