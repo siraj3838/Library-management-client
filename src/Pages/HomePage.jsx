@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import HomeBanner from "../Shared/HomeBanner";
+import SecondHomeBanner from "../Shared/SecondHomeBanner";
 
 const HomePage = () => {
     return (
@@ -6,6 +8,8 @@ const HomePage = () => {
             <Helmet>
                 <title>BBH Library | Home</title>
             </Helmet>
+            <HomeBanner></HomeBanner>
+            <SecondHomeBanner></SecondHomeBanner>
         </div>
     );
 };

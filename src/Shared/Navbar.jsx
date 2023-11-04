@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { RiMenuUnfoldFill } from 'react-icons/ri';
 import { IoCloseSharp } from 'react-icons/io5';
 
+
 const Navbar = () => {
 
     const { user, logOutUser } = useContext(AuthContext);
