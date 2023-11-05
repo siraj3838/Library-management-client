@@ -2,9 +2,10 @@
 const UserFeedBack = () => {
     return (
         <div className="py-5 px-5">
+            <h2 className="text-4xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-[360px] pb-4 mb-5">Our Feedback</h2>
             <div className="max-w-screen-xl mx-auto text-center">
                 <div className="space-y-4 border-2 max-w-3xl mx-auto shadow-2xl py-7 rounded-lg bg-gradient-to-r from-red-200 to-red-300">
-                    <h2 className="bg-gradient-to-r from-red-500 to-pink-600 text-transparent bg-clip-text text-5xl font-extrabold">Active Feedback</h2>
+                    <h2 className="bg-gradient-to-r from-red-500 to-pink-600 text-transparent bg-clip-text text-3xl lg:text-5xl font-extrabold">Active Feedback</h2>
                     <p className="text-lg"><span className="text-xl text-red-800 font-semibold">Dear User,</span> <br />Please Type Your Feedback</p>
                     <div className="max-w-2xl mx-auto">
                         <form className="px-6 lg:px-0">

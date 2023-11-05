@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="bg-gradient-to-r from-pink-400 to-red-300">
             <footer className="footer max-w-screen-xl mx-auto footer-center p-10  text-base-content rounded">
-                <nav className="grid grid-flow-col gap-4 text-gray-700 font-semibold text-base">
+                <nav className="grid grid-flow-col gap-4 text-gray-700 font-semibold md:text-base">
                     <Link to={'/'}>Home</Link>
                     <Link to={'/addBooks'}>Add Books</Link>
                     <Link to={'/allBooks'}>All Books</Link>
@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p className="text-gray-700">Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                    <p className="text-gray-700">Copyright © 2023 - All right reserved by BBH Library</p>
                 </aside>
             </footer>
         </footer>
