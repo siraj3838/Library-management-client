@@ -34,7 +34,7 @@ const BookUpdate = () => {
         myAxios.put(`/books/${_id}`, updateField)
         .then(res => {
             if(res.data.modifiedCount){
-                toast.success('This Book Update Successfully')
+                toast.success('This Book Update Successfully');
             }
         })
         .catch(error => {
