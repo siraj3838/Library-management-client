@@ -20,7 +20,7 @@ const BookDescriptionDetails = () => {
                 // console.log(findId)
             })
     }, [id, myAxios])
-    // console.log(detailsBook)
+    // console.log(detailsBook);
     const { bookPhoto, bookName, authorName, category, description } = detailsBook || {};
     return (
         <div className="my-10 max-w-screen-xl mx-auto">
