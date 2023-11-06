@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
 
 const AddBooks = () => {
 
@@ -18,6 +19,10 @@ const AddBooks = () => {
         axios.post('http://localhost:5005/books', newBook)
         .then(res => {
             console.log(res.data);
+            if(res.data.insertedId){
+                toast.success('Thank You Add This Book')
+                form.reset();
+            }
         })
         .catch(error => {
             console.log(error);
@@ -46,7 +51,6 @@ const AddBooks = () => {
                             <input type="text" name="authorName" placeholder="Author Name" className="w-full rounded-md py-2 pl-3" />
                            
                             <select name="category" className="select select-success w-full rounded-md">
-                                <option disabled selected>Pick your Books Category</option>
                                 <option>Sci-FI</option>
                                 <option>Thriller</option>
                                 <option>History</option>

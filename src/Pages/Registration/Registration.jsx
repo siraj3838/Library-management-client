@@ -21,6 +21,7 @@ const Registration = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        
         // console.log(name, email, password);
         setPasswordError('')
         if (password.length < 6) {
@@ -45,7 +46,7 @@ const Registration = () => {
                 })
                     .then(() => {
                         // window.location.reload()
-                        toast.success('Registration SuccessFully');
+                        toast.success('Congratulations Registration SuccessFully');
                         form.reset()
                     })
                     .catch(error => {
