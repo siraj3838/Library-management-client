@@ -46,13 +46,18 @@ const CategoryBooks = () => {
                             <img className="w-full min-h-full" src={books.bookPhoto} alt="" />
                         </div>
                         <div className="col-span-3 flex items-center text-left">
-                            <div className="space-y-3 pb-5 lg:pb-0 lg:space-y-12">
-                                <h2 className="text-xl md:text-2xl font-semibold">{books.bookName}</h2>
-                                <div className="flex gap-4 items-center">
-                                    <p><FaUserEdit></FaUserEdit></p>
-                                    <p className="text-lg">By {books.authorName}.</p>
+                            <div className="space-y-3 pb-5 lg:pb-0 lg:space-y-10">
+                                <div className="min-h-[75px] space-y-3">
+                                    <h2 className="text-xl md:text-2xl font-semibold">{books.bookName}</h2>
+                                    <div className="flex gap-4 items-center">
+                                        <p><FaUserEdit></FaUserEdit></p>
+                                        <p className="text-lg">By {books.authorName}.</p>
+                                    </div>
                                 </div>
-                                <h4 className="text-xl font-bold">{books.category}</h4>
+                                <div className="flex justify-between items-center">
+                                    <h4 className="text-xl font-bold">{books.category}</h4>
+                                    <p className="font-medium">Now Have <span className="font-bold">{books.quantity}</span> Books</p>
+                                </div>
                                 <div className="flex gap-10 lg:gap-32 items-center">
                                     <div>
                                         <h4 className="text-lg font-semibold text-yellow-600">

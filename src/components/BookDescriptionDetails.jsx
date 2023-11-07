@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AuthContext } from "../Provider/AuthProvider";
 import useAxios from "../Hook/useAxios";
 import { FaUserEdit } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 const BookDescriptionDetails = () => {
     const [detailsBook, setDetailsBook] = useState({});
-    const { user } = useContext(AuthContext);
     const { id } = useParams();
     const myAxios = useAxios();
     useEffect(() => {

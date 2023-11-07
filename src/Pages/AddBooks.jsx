@@ -1,9 +1,10 @@
-import axios from "axios";
+
 import { Helmet } from "react-helmet";
 import { toast } from "react-toastify";
+import useAxios from "../Hook/useAxios";
 
 const AddBooks = () => {
-
+    const myAxios = useAxios();
     const handleAddNewBook = e => {
         e.preventDefault();
         const form = e.target;
@@ -16,7 +17,7 @@ const AddBooks = () => {
         const description = form.description.value;
         const newBook = {bookPhoto, bookName, quantity, authorName, category, rating, description}
         console.log(newBook);
-        axios.post('http://localhost:5005/books', newBook)
+        myAxios.post('/books', newBook)
         .then(res => {
             console.log(res.data);
             if(res.data.insertedId){

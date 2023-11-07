@@ -13,6 +13,7 @@ const AllBooks = () => {
                 setAllBooks(allData)
             })
     }, [myAxios])
+    
     return (
         <div className="my-10">
             <Helmet>

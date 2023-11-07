@@ -39,7 +39,7 @@ const Registration = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user)
-                setCreateSuccess('Registration SuccessFully');
+                setCreateSuccess('Welcome Dear User');
                 updateProfile(res.user, {
                     displayName: name,
                     photoURL: photo,

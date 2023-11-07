@@ -7,12 +7,12 @@ const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
     const myAxios = useAxios();
 
-    const createUser = (email, password)=>{
+    const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
@@ -26,29 +26,51 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, googleProvider)
     }
 
-    const logOutUser = ()=>{
+    const logOutUser = () => {
         setLoading(true);
         return signOut(auth);
     };
 
-    useEffect(()=>{
-        const unSubscribe = onAuthStateChanged(auth, (currentUser)=>{
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser)
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: userEmail };
             setUser(currentUser);
             setLoading(false)
-            console.log(currentUser.displayName, currentUser.email)
-            myAxios.post('/users', {email: currentUser.email, name: currentUser.displayName})
-            .then(res => {
-                console.log(res.data)
-            })
-            .catch(error => {
-                console.log(error);
-            })
+
+
+            if (currentUser) {
+
+                myAxios.post('/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('token response', res.data);
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            }
+            else {
+                myAxios.post('/logout', loggedUser, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }
+
+
+
+
+
         });
-        return ()=> {
+        return () => {
             unSubscribe();
         }
-    },[myAxios])
+    }, [myAxios, user?.email])
 
     const myAuth = {
         loading,

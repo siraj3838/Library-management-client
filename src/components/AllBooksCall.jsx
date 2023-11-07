@@ -2,6 +2,7 @@ import { FaUserEdit } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const AllBooksCall = ({ book }) => {
     const { _id, bookPhoto, bookName, authorName, category, rating } = book || {};
 
