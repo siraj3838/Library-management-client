@@ -24,7 +24,7 @@ const BookCards = () => {
             <div className="flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto">
                 <div className="flex">
                     <img className="hidden md:block md:w-80" src="https://i.ibb.co/w0pwwF1/men-silhouette-vector-8-removebg-preview.png" alt="" />
-                    <h3 className="text-xl font-bold -ml-10">Please Click Your Favorite Category</h3>
+                    <h3 className="text-xl font-bold lg:-ml-10 hidden lg:block">Please Click Your Favorite Category</h3>
                 </div>
                 <div className="my-10">
                     <div className="grid md:grid-cols-2 gap-10" data-aos="flip-left" data-aos-duration="2400">
