@@ -40,7 +40,7 @@ const AddBooks = () => {
                     <div className="hover:scale-110 transition-all">
                         <img className="w-72" src="https://i.ibb.co/kHBZmtW/Screenshot-2023-11-05-124541-removebg-preview.png" alt="" />
                     </div>
-                    <form onSubmit={handleAddNewBook} className="max-w-screen-md mx-auto rounded-lg bg-gradient-to-r from-red-200 to-red-300 p-10 shadow-2xl">
+                    <form onSubmit={handleAddNewBook} data-aos="flip-down" data-aos-duration="2400" className="max-w-screen-md mx-auto rounded-lg bg-gradient-to-r from-red-200 to-red-300 p-10 shadow-2xl">
                         <h3 className="text-3xl font-bold text-center mb-6 italic">New <span className="bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text">Books</span></h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-5">
                             <input type="text" name="bookPhoto" placeholder="Books Photo" className="w-full rounded-md py-2 pl-3" />

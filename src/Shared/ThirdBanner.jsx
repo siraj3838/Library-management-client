@@ -1,7 +1,8 @@
 
 const ThirdBanner = () => {
     return (
-        <div className="px-5 lg:px-0 mt-10">
+        <div className="px-5 lg:px-0 mt-10" data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom" data-aos-duration="2400">
             <h2 className="text-3xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-96 pb-4 bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text">Our Book Event Calender</h2>
             <div className="grid md:grid-cols-5 items-center max-w-screen-xl mx-auto">
                 <div className="text-center md:text-left col-span-2">

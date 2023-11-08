@@ -7,7 +7,7 @@ const AllBooksCall = ({ book }) => {
     const { _id, bookPhoto, bookName, authorName, category, rating } = book || {};
 
     return (
-        <div className="h-[620px] border shadow-lg glass">
+        <div className="h-[620px] border shadow-lg glass" data-aos="flip-right" data-aos-duration="2400">
             <div>
                 <img className="h-96 w-full" src={bookPhoto} alt="" />
             </div>

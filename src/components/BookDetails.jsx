@@ -37,8 +37,8 @@ const BookDetails = () => {
         const time = form.time.value;
         const user = { email, userName, date, time };
 
-        console.log(user);
-        console.log(_id);
+        // console.log(user);
+        // console.log(_id);
         const quantity = detailsBook?.quantity;
         if (email == '' && userName == '' && date == '') {
             return toast.error('Please type your valid Information');
@@ -79,7 +79,8 @@ const BookDetails = () => {
 
 
     return (
-        <div className="my-10 max-w-screen-xl mx-auto">
+        <div className="my-10 max-w-screen-xl mx-auto" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" data-aos-duration="2400">
             <Helmet>
                 <title>BBH Library | {category ? category : ''} | {bookName ? bookName : ''}</title>
             </Helmet>

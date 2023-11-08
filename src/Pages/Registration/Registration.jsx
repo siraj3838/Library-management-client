@@ -77,7 +77,7 @@ const Registration = () => {
 
     return (
         <div className="mx-5 lg:mx-0">
-            <div className="max-w-lg mx-auto border-4 p-10 my-5 bg-gradient-to-r from-gray-400 to-gray-300">
+            <div className="max-w-lg mx-auto border-4 p-10 my-5 bg-gradient-to-r from-gray-400 to-gray-300" data-aos="flip-right" data-aos-duration="2400">
                 <div className="relative mx-auto flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
                     <h4 className="block font-sans text-4xl font-bold leading-snug tracking-normal text-blue-gray-900 antialiased text-center">
                         Register

@@ -10,12 +10,14 @@ const BorrowBooks = () => {
     const [userBooks, setUserBooks] = useState([])
     // const [userBook, setUserBook] = useState(userBooks);
     useEffect(() => {
-        myAxios.get('/borrows')
+        myAxios.get(`/borrows/?email=${user?.email}`)
             .then(res => {
                 const borrowData = res.data
+                setUserBooks(borrowData)
                 // console.log(borrowData)
-                const searchEmail = borrowData.filter(borrow => borrow.email == user.email)
-                setUserBooks(searchEmail)
+                // const searchEmail = borrowData.filter(borrow => borrow.email == user.email)
+                // const sameBook = borrowData.filter(book => book.bookName !== book.bookName)
+                // console.log(sameBook);
             })
             .catch(error => {
                 console.log(error);
@@ -48,7 +50,7 @@ const BorrowBooks = () => {
             <div className="my-10 max-w-screen-xl mx-auto">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {
-                        userBooks.map(book => <div className="rounded-lg shadow-2xl p-9 glass md:text-left text-center" key={book._id}>
+                        userBooks.map(book => <div className="rounded-lg shadow-2xl p-9 glass md:text-left text-center" key={book._id} data-aos="flip-left" data-aos-duration="2400">
                             <div className="">
                                 <img className="w-80 h-80" src={book.bookPhoto} alt="" />
                             </div>

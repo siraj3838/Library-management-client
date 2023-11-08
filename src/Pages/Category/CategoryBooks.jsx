@@ -41,7 +41,7 @@ const CategoryBooks = () => {
 
             <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-5 space-y-4 px-5 lg:px-0 my-10">
                 {
-                    findBooks.map(books => <div className="grid lg:grid-cols-5 gap-5 border-l-4 border-red-900 px-3 shadow-2xl" key={books._id}>
+                    findBooks.map(books => <div className="grid lg:grid-cols-5 gap-5 border-l-4 border-red-900 px-3 shadow-2xl" key={books._id} data-aos="flip-right" data-aos-duration="2400">
                         <div className="col-span-2 pl-10 lg:pl-0">
                             <img className="w-full min-h-full" src={books.bookPhoto} alt="" />
                         </div>

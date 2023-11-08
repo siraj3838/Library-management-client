@@ -4,6 +4,7 @@ import useAxios from "../Hook/useAxios";
 import { FaUserEdit } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
+
 const BookDescriptionDetails = () => {
     const [detailsBook, setDetailsBook] = useState({});
     const { id } = useParams();
@@ -21,7 +22,8 @@ const BookDescriptionDetails = () => {
     // console.log(detailsBook);
     const { bookPhoto, bookName, authorName, category, description } = detailsBook || {};
     return (
-        <div className="my-10 max-w-screen-xl mx-auto">
+        <div className="my-10 max-w-screen-xl mx-auto" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" data-aos-duration="2400">
             <Helmet>
                 <title>BBH Library | {category ? category : ''} | {bookName ? bookName : ''}</title>
             </Helmet>

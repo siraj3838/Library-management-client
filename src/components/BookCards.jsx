@@ -27,9 +27,9 @@ const BookCards = () => {
                     <h3 className="text-xl font-bold -ml-10">Please Click Your Favorite Category</h3>
                 </div>
                 <div className="my-10">
-                    <div className="grid md:grid-cols-2 gap-10">
+                    <div className="grid md:grid-cols-2 gap-10" data-aos="flip-left" data-aos-duration="2400">
                         {
-                            booksList.map(book => <div className="rounded-lg shadow-2xl py-4 glass" key={book._id}>
+                            booksList.map(book => <div className="rounded-lg shadow-2xl py-4 glass" key={book._id} data-aos="flip-right" data-aos-duration="2400">
                                 <div className="flex justify-center">
                                     <img className="w-80 h-56" src={book.cate_img} alt="" />
                                 </div>
