@@ -63,7 +63,7 @@ const Registration = () => {
             .then(response => {
                 Swal.fire(
                     'Thank You',
-                    'Login Successfully',
+                    'Google Login Successfully',
                     'success'
                   )
                 navigate(location.state ? location?.state : '/')

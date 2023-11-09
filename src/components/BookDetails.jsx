@@ -27,7 +27,6 @@ const BookDetails = () => {
     // console.log(detailsBook);
     const { _id, bookPhoto, bookName, quantity, authorName, category, description } = detailsBook || {};
 
-
     const handleBorrowBooks = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -43,6 +42,8 @@ const BookDetails = () => {
         if (email == '' && userName == '' && date == '') {
             return toast.error('Please type your valid Information');
         }
+        
+        
         if (quantity > 0) {
             console.log(quantity)
             myAxios.post('/borrows', {
@@ -80,7 +81,7 @@ const BookDetails = () => {
 
     return (
         <div className="my-10 max-w-screen-xl mx-auto" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" data-aos-duration="2400">
+            data-aos-anchor-placement="top-bottom" data-aos-duration="2400">
             <Helmet>
                 <title>BBH Library | {category ? category : ''} | {bookName ? bookName : ''}</title>
             </Helmet>
@@ -104,34 +105,37 @@ const BookDetails = () => {
                             <p className="border pt-3 text-gray-500 min-h-[80px]">{description ? description.slice(0, 200) : ''} <span className="text-xl font-bold text-red-600"><Link to={`/descriptionDetails/${_id}`}>
                                 Read more...
                             </Link></span></p>
-                            {quantity == 0 ? <button className="rounded-md py-2 text-white px-3 hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl btn btn-disabled">Borrow</button> 
-                            :
-                            <div className="flex gap-4">
+                            {quantity == 0 ? <div className="flex items-center gap-4">
+                                <button className="rounded-md py-2 text-white px-3 hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl btn btn-disabled">Borrow</button>
+                                <h3 className="text-xl font-bold">This Book not available now please borrow another Book</h3>
+                            </div>
+                                :
+                                <div className="flex gap-4">
 
-                                {/* Open the modal using document.getElementById('ID').showModal() method */}
-                                <button className={'rounded-md py-2 text-white px-3 hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl'} onClick={() => document.getElementById('my_modal_5').showModal()}>Borrow</button>
-                                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                                    <div className="modal-box">
-                                        <p className="text-base mb-10 text-gray-500 "><span className="text-black font-bold text-lg">Hello {user.displayName}</span></p>
-                                        <form onSubmit={handleBorrowBooks} className="space-y-6">
-                                            <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="email" name="email" defaultValue={user?.email} id="" />
-                                            <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="text" name="userName" defaultValue={user?.displayName} id="" />
-                                            <p className="text-sm">When you will this book return?</p>
-                                            <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="date" name="date" id="" />
-                                            <div className="hidden"><input type="text" className="" name="time" value={moment().format("YYYY-MM-DD, h:mm a")} id="" /></div>
-                                            <input className="rounded-md py-2 text-white w-full hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl" type="submit" value="Borrow Now" />
-                                        </form>
-                                        <div className="modal-action">
-                                            <form method="dialog">
-                                                {/* if there is a button in form, it will close the modal */}
-
-                                                <button className="btn">Close</button>
+                                    {/* Open the modal using document.getElementById('ID').showModal() method */}
+                                    <button className={'rounded-md py-2 text-white px-3 hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl'} onClick={() => document.getElementById('my_modal_5').showModal()}>Borrow</button>
+                                    <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                        <div className="modal-box">
+                                            <p className="text-base mb-10 text-gray-500 "><span className="text-black font-bold text-lg">Hello {user.displayName}</span></p>
+                                            <form onSubmit={handleBorrowBooks} className="space-y-6">
+                                                <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="email" name="email" defaultValue={user?.email} id="" />
+                                                <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="text" name="userName" defaultValue={user?.displayName} id="" />
+                                                <p className="text-sm">When you will this book return?</p>
+                                                <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="date" name="date" id="" />
+                                                <div className="hidden"><input type="text" className="" name="time" value={moment().format("YYYY-MM-DD, h:mm a")} id="" /></div>
+                                                <input className="rounded-md py-2 text-white w-full hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl" type="submit" value="Borrow Now" />
                                             </form>
-                                        </div>
-                                    </div>
-                                </dialog>
+                                            <div className="modal-action">
+                                                <form method="dialog">
+                                                    {/* if there is a button in form, it will close the modal */}
 
-                            </div>}
+                                                    <button className="btn">Close</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+
+                                </div>}
 
                         </div>
                     </div>
