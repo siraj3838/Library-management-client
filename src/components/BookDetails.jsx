@@ -25,7 +25,7 @@ const BookDetails = () => {
             })
     }, [id, myAxios])
     // console.log(detailsBook);
-    const { _id, bookPhoto, bookName, quantity, authorName, category, description } = detailsBook || {};
+    const { _id, bookPhoto, bookName,rating, quantity, authorName, category, description } = detailsBook || {};
 
     const handleBorrowBooks = (e) => {
         e.preventDefault();
@@ -54,6 +54,7 @@ const BookDetails = () => {
                 bookPhoto: detailsBook.bookPhoto,
                 bookName: detailsBook.bookName,
                 quantity,
+                rating: detailsBook.rating,
                 authorName: detailsBook.authorName,
                 category: detailsBook.category,
                 description: detailsBook.description
@@ -61,15 +62,8 @@ const BookDetails = () => {
                 .then(res => {
                     console.log(res.data)
                     if (res.data.insertedId) {
-                        // myAxios.patch('/books', {quantity: detailsBook.quantity})
-                        // .then(res => {
-                        //     console.log(res.data);
-                        // })
-                        // .catch(error => {
-                        //     console.log(error);
-                        // })
+                        
                         toast.success('You select this book');
-                        // window.location.reload();
                     }
                 })
                 .catch(error => {

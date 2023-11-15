@@ -11,9 +11,10 @@ const UserFeedBack = () => {
         const form = e.target;
         const name = form.name.value;
         const message = form.message.value;
+        const rating = form.rating.value;
         const photo = user.photoURL;
         const email = user.email;
-        const feedbackData = { name, message, photo, email };
+        const feedbackData = { name, message,rating, photo, email };
         console.log(feedbackData)
         Swal.fire({
             title: 'Are you sure?',
@@ -60,10 +61,13 @@ const UserFeedBack = () => {
 
                         <div className="max-w-2xl mx-auto">
                             <form onSubmit={feedBackHandle} className="px-6 lg:px-0">
-                                <input className="w-full pl-5 py-3 rounded-xl" defaultValue={user?.displayName} type="text" name="name" placeholder="Name *" id="" />
+                                <input className="w-full pl-5 py-3 rounded-xl" defaultValue={user?.displayName + '*'} type="text" name="name" id="" />
                                 <br />
                                 <br />
-                                <textarea className="w-full rounded-xl pl-5 py-5" placeholder="Feedback" required name="message" id="" cols="30" rows="6"></textarea>
+                                <input className="w-full pl-5 py-3 rounded-xl" required type="text" name="rating" placeholder="Please Rating" id="" />
+                                <br />
+                                <br />
+                                <textarea className="w-full rounded-xl pl-5 py-5" placeholder="Some Feedback" required name="message" id="" cols="30" rows="6"></textarea>
                                 <br />
                                 <br />
                                 <input className="w-full rounded-xl pl-5 py-3 text-white px-3 hover:text-blue-800 bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl" type="submit" value="Submit" />

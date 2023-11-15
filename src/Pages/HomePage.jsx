@@ -5,6 +5,7 @@ import UserFeedBack from "../Shared/UserFeedBack";
 import ThirdBanner from "../Shared/ThirdBanner";
 import BookCards from "../components/BookCards";
 import FeedBackPost from "../Shared/FeedBackPost";
+import SecondBanner from "../Shared/SecondBanner";
 
 const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ const HomePage = () => {
             </Helmet>
             <HomeBanner></HomeBanner>
             <BookCards></BookCards>
+            <SecondBanner></SecondBanner>
             <ThirdBanner></ThirdBanner>
             <FeedBackPost></FeedBackPost>
             <UserFeedBack></UserFeedBack>
