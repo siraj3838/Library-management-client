@@ -25,7 +25,7 @@ const BookDetails = () => {
             })
     }, [id, myAxios])
     // console.log(detailsBook);
-    const { _id, bookPhoto, bookName,rating, quantity, authorName, category, description } = detailsBook || {};
+    const { _id, bookPhoto, bookName, rating, quantity, authorName, category, description } = detailsBook || {};
 
     const handleBorrowBooks = (e) => {
         e.preventDefault();
@@ -42,8 +42,8 @@ const BookDetails = () => {
         if (email == '' && userName == '' && date == '') {
             return toast.error('Please type your valid Information');
         }
-        
-        
+
+
         if (quantity > 0) {
             console.log(quantity)
             myAxios.post('/borrows', {
@@ -61,9 +61,11 @@ const BookDetails = () => {
             })
                 .then(res => {
                     console.log(res.data)
+                    if (res.data.insertedId == null) {
+                        return toast.error('Already You Borrowed');
+                    }
                     if (res.data.insertedId) {
-                        
-                        toast.success('You select this book');
+                        toast.success('You Borrowed this book');
                     }
                 })
                 .catch(error => {
@@ -116,7 +118,9 @@ const BookDetails = () => {
                                                 <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="text" name="userName" defaultValue={user?.displayName} id="" />
                                                 <p className="text-sm">When you will this book return?</p>
                                                 <input className="w-full py-2 bg-slate-200 rounded-md px-3" type="date" name="date" id="" />
-                                                <div className="hidden"><input type="text" className="" name="time" value={moment().format("YYYY-MM-DD, h:mm a")} id="" /></div>
+                                                <div className="hidden">
+                                                    <input type="text" className="" name="time" value={moment().format("YYYY-MM-DD, h:mm a")} id="" />
+                                                </div>
                                                 <input className="rounded-md py-2 text-white w-full hover:scale-110 transition-all bg-gradient-to-r from-red-500 to-pink-600 font-bold text-xl" type="submit" value="Borrow Now" />
                                             </form>
                                             <div className="modal-action">

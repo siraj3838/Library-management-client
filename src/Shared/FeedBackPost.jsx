@@ -44,6 +44,7 @@ const FeedBackPost = () => {
             }
 
             <div className="">
+                {/* my active feedbacks */}
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     {
                         feedbacks.map(feed => <SwiperSlide className="my-14 px-5 lg:px-0" key={feed._id}>
@@ -60,7 +61,8 @@ const FeedBackPost = () => {
 
                                     <div className="md:col-span-2 lg:ml-0 md:ml-40 grid grid-cols-3 gap-3">
                                         <div className="col-span-2">
-                                            <div className="flex lg:justify-center"><h3 className="text-orange-600 text-lg md:text-2xl font-semibold text-center">Client Reviews</h3><p className="flex justify-center ml-2 text-[#CD9003]"><Rating
+                                            <div className="flex lg:justify-center"><h3 className="text-orange-600 text-lg md:text-2xl font-semibold text-center">Client Reviews</h3>
+                                            <p className="flex justify-center ml-2 text-[#CD9003]"><Rating
                                                 style={{ maxWidth: 120 }}
                                                 value={feed?.rating}
                                                 readOnly
