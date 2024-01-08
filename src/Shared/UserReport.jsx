@@ -5,7 +5,7 @@ const UserReport = () => {
     return (
         <div className="mb-10">
             <h2 className="text-3xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-[550px] pb-4 bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text ">BOOKSHARE</h2>
-
+            {/* book share section */}
             <div className="py-10 px-5 lg:px-0">
                 <div className="max-w-screen-lg mx-auto bg-base-200 p-10 mb-6">
                     <p className='text-gray-600'>This is an Online Library Management system which helps you to monitor and control the transactions in the library. It is used to find books, calculate fine, store detailed information of the users and books database. It uses Barcode scanning features.</p>
