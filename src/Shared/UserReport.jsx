@@ -11,17 +11,17 @@ const UserReport = () => {
                     <p className='text-gray-600'>This is an Online Library Management system which helps you to monitor and control the transactions in the library. It is used to find books, calculate fine, store detailed information of the users and books database. It uses Barcode scanning features.</p>
                 </div>
                 <div className="max-w-screen-lg mx-auto grid lg:grid-cols-3 gap-6">
-                    <div className='border pb-3'>
+                    <div className='border pb-3' data-aos="flip-right" data-aos-duration="2400">
                         <img className='h-48 w-full border' src={image1} alt="" />
                         <h3 className='text-2xl font-medium py-1 px-3'>Users</h3>
                         <p className='px-3 text-gray-500'>It gives the entire information about users. Aad a new Book, edit the information of existing book</p>
                     </div>
-                    <div className='border pb-3'>
+                    <div className='border pb-3' data-aos="flip-right" data-aos-duration="2400">
                         <img className='h-48 w-full border' src={image2} alt="" />
                         <h3 className='text-2xl font-medium py-1 px-3'>Books</h3>
                         <p className='px-3 text-gray-500'>It has information about the books including number of copies.</p>
                     </div>
-                    <div className='border pb-3'>
+                    <div className='border pb-3' data-aos="flip-right" data-aos-duration="2400">
                         <img className='h-48 w-full border' src={image3} alt="" />
                         <h3 className='text-2xl font-medium py-1 px-3'>Reports</h3>
                         <p className='px-3 text-gray-500'>It gives you the accession number of issued books, their availability with daily library report.</p>
