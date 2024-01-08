@@ -3,7 +3,7 @@ const Skeleton = () => {
     return (
         <div className="mb-10">
             <h2 className="text-3xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-96 pb-4 bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text">Start Selling Any Book</h2>
-
+            {/* selling section */}
             <div className="bg-gradient-to-r from-pink-400 to-red-300 mt-7 py-16 px-5 lg:px-0">
                 <div className="flex justify-around items-center flex-col lg:flex-row max-w-screen-lg mx-auto">
                     <div className="flex-1">
