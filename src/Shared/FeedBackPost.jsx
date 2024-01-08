@@ -40,14 +40,14 @@ const FeedBackPost = () => {
     return (
         <div>
             {
-                feedbacks.length ? <h2 className="bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text text-4xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-[360px] pb-4 mb-5">Our User All Feedback</h2> : ''
+                feedbacks.length ? <h2 className="bg-gradient-to-r from-pink-500 to-red-500 text-transparent bg-clip-text text-4xl lg:text-5xl font-bold text-center border-b-2 border-black lg:mx-[360px] pb-4">Our User All Feedback</h2> : ''
             }
 
             <div className="">
                 {/* my active feedbacks */}
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     {
-                        feedbacks.map(feed => <SwiperSlide className="my-14 px-5 lg:px-0" key={feed._id}>
+                        feedbacks.map(feed => <SwiperSlide className="my-10 px-5 lg:px-0" key={feed._id}>
                             <div className="max-w-screen-xl mx-auto my-5">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 shadow-2xl bg-accent py-5 px-5 rounded-md">
                                     <div className="flex gap-2 md:justify-center lg:justify-start">
