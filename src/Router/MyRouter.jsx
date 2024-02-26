@@ -58,7 +58,7 @@ const MyRouter = createBrowserRouter([
             {
                 path: '/descriptionDetails/:id',
                 element: <BookDescriptionDetails></BookDescriptionDetails>
-            }
+            },
             
         ]
     }
