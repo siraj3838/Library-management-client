@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import useAxios from "../Hook/useAxios";
-const googleProvider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider()
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
